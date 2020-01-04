@@ -1,0 +1,48 @@
+<!--  Login Page -->
+<div class="ui-g-12 ui-g-nopad" *ngIf="!isLogin; else mainPage">
+  <h1>CS Connection 2019 @KMITL,</h1>
+  <h2>Please login</h2>
+  <div class="ui-inputgroup" style="margin-top: 2rem;">
+    <span class="ui-inputgroup-addon"><i class="pi pi-id-card" style="line-height: 1.25;"></i></span>
+    <input pInputText placeholder="Account No." [(ngModel)]="userId">
+  </div>
+  <br>
+  <div class="ui-inputgroup">
+    <span class="ui-inputgroup-addon"><i class="pi pi-key" style="line-height: 1.25;"></i></span>
+    <input pInputText placeholder="Password" [(ngModel)]="userPassword" (keydown.enter)="onLogin()">
+  </div>
+  <div style="margin: 1em 2em 1em 0;">
+    <p-message *ngIf='showMsg' severity="{{msgSeverity}}" text="{{msg}}"></p-message>
+  </div>
+  <p-button styleClass="ui-button-rounded" icon="pi pi-sign-in" iconPos="right" label="Login" (onClick)="onLogin()">
+  </p-button>
+</div>
+
+<!-- Main page -->
+<ng-template #mainPage>
+  <h1>Hi {{showUserId()}},</h1>
+  <h2>Welcome to CS Conection 2019</h2>
+
+  <div class="card-menu">
+    <a class="card-btn color-1" href="#attend" (click)="attendEvent()">
+      ลงชื่อเข้างาน
+    </a>
+    <!-- <a class="card-btn color-2" href="#unattend" (click)="unattendEvent()">
+      ลงชื่อออกงาน
+    </a> -->
+  </div>
+  <div style="text-align: center; margin: 1em 0em 1em 0;">
+    <p-message *ngIf='showMsg' severity="{{msgSeverity}}" text="{{msg}}"></p-message>
+  </div>
+
+  <div style="text-align: center; margin-top: 3rem;;">
+    <H2>จำนวนผู้ร่วมงาน : </H2>
+    <H1 style="color: #f0a51a;">{{showAttendants()}}</H1>
+  </div>
+
+  <div style="bottom: 25px; position: absolute; ">
+    <p-button styleClass="ui-button-rounded ui-button-secondary" icon="pi pi-sign-out" label="Logout"
+      (onClick)="onLogout()"></p-button>
+  </div>
+
+</ng-template>
