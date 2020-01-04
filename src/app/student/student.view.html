@@ -9,7 +9,7 @@
   <br>
   <div class="ui-inputgroup">
     <span class="ui-inputgroup-addon"><i class="pi pi-key" style="line-height: 1.25;"></i></span>
-    <input pInputText placeholder="Password" [(ngModel)]="userPassword" (keydown.enter)="onLogin()">
+    <input pInputText placeholder="Password" [(ngModel)]="userPassword" type="password" (keydown.enter)="onLogin()">
   </div>
   <div style="margin: 1em 2em 1em 0;">
     <p-message *ngIf='showMsg' severity="{{msgSeverity}}" text="{{msg}}"></p-message>
