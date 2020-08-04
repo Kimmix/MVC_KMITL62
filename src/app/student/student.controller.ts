@@ -1,21 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Student, StudentModel } from './student.model';
-import { trigger, transition, style, animate } from '@angular/animations';
 
 @Component({
   selector: 'app-student',
-  templateUrl: './student.view.html',
-  animations: [
-    trigger('myInsertRemoveTrigger', [
-      transition(':enter', [
-        style({ opacity: 0 }),
-        animate('400ms', style({ opacity: 1 })),
-      ]),
-      transition(':leave', [
-        animate('400ms', style({ opacity: 0 }))
-      ])
-    ]),
-  ]
+  templateUrl: './student.view.html'
 })
 export class StudentController implements OnInit {
   user: Student = null;

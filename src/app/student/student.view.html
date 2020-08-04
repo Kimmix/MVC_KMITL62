@@ -1,5 +1,5 @@
 <!--  Login Page -->
-<div class="container" @myInsertRemoveTrigger *ngIf="!isLogin; else mainPage">
+<div *ngIf="!isLogin; else mainPage">
   <div class="card">
     <h1>CS Connection 2019 @KMITL,</h1>
     <h2>Please login</h2>
@@ -7,10 +7,9 @@
     <br>
     <br>
     <input placeholder="Password" [(ngModel)]="userPassword" type="password" (keydown.enter)="onLogin()">
-    <div style="margin: 1em 2em 1em 0;">
-      <p [style.color]="msgSeverity === 'error' ? 'red' : 'green'" class="msg">{{msg}}</p>
-    </div>
-    <a class="button1" (click)="onLogin()">Login</a>
+    <a class="button1" style="margin: 1em 2em 1em 0;" (click)="onLogin()">Login</a>
+    <span [style.color]="msgSeverity === 'error' ? 'red' : 'green'">{{msg}}</span>
+
   </div>
 </div>
 
@@ -25,21 +24,17 @@
         ลงชื่อเข้างาน
       </a>
       <!-- <a class="card-btn color-2" href="#unattend" (click)="unattendEvent()">
-        ลงชื่อออกงาน
-      </a> -->
-    </div>
-    <div style="text-align: center; margin: 1em 0em 1em 0;">
-      <p [style.color]="msgSeverity === 'error' ? 'red' : 'green'" class="msg">{{msg}}</p>
+            ลงชื่อออกงาน
+          </a> -->
     </div>
 
-    <div style="text-align: center; margin-top: 3rem;;">
+    <div style="text-align: center;">
       <H2>จำนวนผู้ร่วมงาน : </H2>
       <H1 style="color: #f0a51a;">{{showAttendants()}}</H1>
     </div>
 
-    <div style="bottom: 25px; position: absolute; ">
-      <a class="button1" (click)="onLogout()">Logout</a>
-    </div>
+    <a class="button1" style="margin: 1em 2em 1em 0;" (click)="onLogout()">Logout</a>
+    <span [style.color]="msgSeverity === 'error' ? 'red' : 'green'">{{msg}}</span>
   </div>
 
 </ng-template>
