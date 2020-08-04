@@ -1,20 +1,74 @@
 @import url('https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600,700,800');
 @import url('https://fonts.googleapis.com/css?family=Prompt:400&display=swap');
+html {
+    font-size: calc(0.7em + 0.5vw)
+}
 
-html { font-size: calc(0.7em + 0.5vw) }
-button { font-size: inherit }
-input { font-size: inherit }
-ui-button { font-size: inherit }
+a.button1 {
+    font-size: 1.3rem;
+    display: inline-block;
+    padding: 0.35em 1.2em;
+    border: 0.1em solid #FFFFFF;
+    margin: 0 0.3em 0.3em 0;
+    border-radius: 0.12em;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    color: #FFFFFF;
+    text-align: center;
+    transition: all 0.2s;
+}
 
-body{
+a.button1:hover {
+    color: #000000;
+    background-color: #FFFFFF;
+    cursor: pointer;
+}
+
+@media all and (max-width:30em) {
+    a.button1 {
+        display: block;
+        margin: 0.4em auto;
+    }
+}
+
+input {
+    font-size: 1.3rem;
+    font-family: inherit;
+    width: 100%;
+    border: 0;
+    border-bottom: 2px solid #d3d3d3;
+    outline: 0;
+    color: white;
+    padding: 7px 0;
+    background: transparent;
+    transition: border-color 0.2s;
+}
+
+input:focus {
+    border-color: #00bcd4;
+}
+
+ui-button {
+    font-size: inherit
+}
+
+body {
     font-family: 'Fira Sans', sans-serif;
-	color: #fff;
+    color: #fff;
     background-color: rgb(255, 255, 255);
 }
 
-.m-content{
-	display: flex;
-	justify-content: center;
+.container {
+    display: flex;
+    justify-content: center;
+    max-width: 960px;
+    margin: auto;
+}
+
+.msg {
+    font-size: 2em;
 }
 
 .card {
@@ -25,38 +79,39 @@ body{
     margin: 1rem;
     position: relative;
     width: 100%;
-	padding: 20px;
-	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-	border-radius: 25px;
-	transition: all .4s ease-in-out;
-	border-top: 9px solid #00bcd4;
-	border-left: 9px solid #00bcd4;
+    padding: 20px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    border-radius: 25px;
+    transition: all .4s ease-in-out;
+    border-top: 9px solid #00bcd4;
+    border-left: 9px solid #00bcd4;
 }
 
 .card:hover {
-  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
-.card-menu {font-family: 'Prompt', sans-serif;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+.card-menu {
+    font-family: 'Prompt', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .card-btn {
     margin: 0.5em;
-    padding: 15px;
-	width: 75%;
-	height: 3em;
-	display: flex;
-	border-radius: 35px;
-	justify-content: center;
-	align-items: center;
-	cursor:pointer;
-	font-size: 1.5em;
+    /* padding: 15px; */
+    width: 75%;
+    height: 3em;
+    display: flex;
+    border-radius: 35px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1.5em;
     font-family: 'Prompt', sans-serif;
     color: #fff;
-	background-size: 300% 100%;
+    background-size: 300% 100%;
     transition: all .4s ease-in-out;
 }
 
@@ -69,44 +124,55 @@ body{
     background-image: linear-gradient(to right, #25aae1, #40e495, #30dd8a, #2bb673);
     box-shadow: 0 4px 15px 0 rgba(49, 196, 190, 0.75);
 }
+
 .card-btn.color-2 {
     background-image: linear-gradient(to right, #f5ce62, #e43603, #fa7199, #e85a19);
     box-shadow: 0 4px 15px 0 rgba(229, 66, 10, 0.75);
 }
+
 .card-btn.color-3 {
     background-image: linear-gradient(to right, #667eea, #764ba2, #6B8DD6, #8E37D7);
     box-shadow: 0 4px 15px 0 rgba(116, 79, 168, 0.75);
 }
+
 .card-btn.color-4 {
     background-image: linear-gradient(to right, #fc6076, #ff9a44, #ef9d43, #e75516);
     box-shadow: 0 4px 15px 0 rgba(252, 104, 110, 0.75);
 }
+
 .card-btn.color-5 {
     background-image: linear-gradient(to right, #0ba360, #3cba92, #30dd8a, #2bb673);
     box-shadow: 0 4px 15px 0 rgba(23, 168, 108, 0.75);
 }
+
 .card-btn.color-6 {
     background-image: linear-gradient(to right, #009245, #FCEE21, #00A8C5, #D9E021);
     box-shadow: 0 4px 15px 0 rgba(83, 176, 57, 0.75);
 }
+
 .card-btn.color-7 {
     background-image: linear-gradient(to right, #6253e1, #852D91, #A3A1FF, #F24645);
     box-shadow: 0 4px 15px 0 rgba(126, 52, 161, 0.75);
 }
+
 .card-btn.color-8 {
     background-image: linear-gradient(to right, #29323c, #485563, #2b5876, #4e4376);
     box-shadow: 0 4px 15px 0 rgba(45, 54, 65, 0.75);
 }
+
 .card-btn.color-9 {
     background-image: linear-gradient(to right, #25aae1, #4481eb, #04befe, #3f86ed);
     box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75);
 }
+
 .card-btn.color-10 {
-        background-image: linear-gradient(to right, #ed6ea0, #ec8c69, #f7186a , #FBB03B);
+    background-image: linear-gradient(to right, #ed6ea0, #ec8c69, #f7186a, #FBB03B);
     box-shadow: 0 4px 15px 0 rgba(236, 116, 149, 0.75);
 }
+
 .card-btn.color-11 {
-       background-image: linear-gradient(to right, #eb3941, #f15e64, #e14e53, #e2373f);  box-shadow: 0 5px 15px rgba(242, 97, 103, .4);
+    background-image: linear-gradient(to right, #eb3941, #f15e64, #e14e53, #e2373f);
+    box-shadow: 0 5px 15px rgba(242, 97, 103, .4);
 }
 
 *:focus {
@@ -117,7 +183,6 @@ body{
     font-size: inherit !important;
     width: 600px;
 }
-
 
 .ui-dialog-content {
     background-color: #fffbfb !important;

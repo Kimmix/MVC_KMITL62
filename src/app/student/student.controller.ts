@@ -1,10 +1,21 @@
 import { Component, OnInit } from '@angular/core';
-import { Message } from 'primeng/components/common/api';
 import { Student, StudentModel } from './student.model';
+import { trigger, transition, style, animate } from '@angular/animations';
 
 @Component({
   selector: 'app-student',
-  templateUrl: './student.view.html'
+  templateUrl: './student.view.html',
+  animations: [
+    trigger('myInsertRemoveTrigger', [
+      transition(':enter', [
+        style({ opacity: 0 }),
+        animate('400ms', style({ opacity: 1 })),
+      ]),
+      transition(':leave', [
+        animate('400ms', style({ opacity: 0 }))
+      ])
+    ]),
+  ]
 })
 export class StudentController implements OnInit {
   user: Student = null;
@@ -19,14 +30,13 @@ export class StudentController implements OnInit {
   msg: string;
   msgSeverity: string;
 
-  msgs: Message[] = [];
-
   constructor() { }
 
   ngOnInit() {
     this.isLogin = false;
     this.resetMsg();
   }
+
 
   onLogin() {
     if (this.studentModel.verifyId(this.userId)) {
