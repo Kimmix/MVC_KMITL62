@@ -5,7 +5,7 @@
 
 ตัวอย่างแนวทางจาก https://scotch.io/tutorials/mvc-in-an-angular-world
 
-UI ใช้ Primeng(primeface) + Custom CSS
+UI ใช้ ~~Primeng(primeface) +~~ Custom CSS
 
 Angular ใช้หลักการแบบ MVVM/MVVC/MVW(Model View WhatEver) ไม่ใช้ MVC
 
